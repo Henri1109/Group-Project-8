@@ -1,6 +1,6 @@
 #define IN1 4  // PD4 
 #define IN2 2  // PD2 
-#define ENA 3  // PD3
+#define ENA 3  // PD3 wwwwwwwwwwwwwwwwwwwww
 #define IN3 7  // PD7
 #define IN4 8  // PD8 
 #define ENB 6  // PD6 
