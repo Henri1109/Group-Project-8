@@ -1,17 +1,7 @@
-int trigPin = 9;    // Trigger
-int echoPin = 10;    // Echo
-long duration, cm;
 
-void setup() {
-  // put your setup code here, to run once:
-    Serial.begin (9600);
 
-   pinMode(trigPin, OUTPUT);
-   pinMode(LED_BUILTIN, OUTPUT);
-   pinMode(echoPin, INPUT);
-}
-
-void loop() {
+  if (currentMillis - previousMillis >= interval) 
+  {
   // put your main code here, to run repeatedly:
   digitalWrite(trigPin, LOW);
   delayMicroseconds(5);
@@ -22,23 +12,24 @@ void loop() {
   pinMode(echoPin, INPUT);
   duration = pulseIn(echoPin, HIGH);
  
+}
 cm = (duration/2) / 29.1;
-
-   if(duration < 2000)
+//cm is set at 1196 if no signal is received by the echopin due to one of the sensors being covered in a way that makes it impossible for the wave to go through
+   if(cm < 30)
    {
 
 
     digitalWrite(LED_BUILTIN, HIGH);
+    //stop digitalWrite(, LOW)
    }
    else
    {
     digitalWrite(LED_BUILTIN, LOW);
-
+    //drive forward digitalWrite(,HIGH)
 
    }
    Serial.print(cm);
    Serial.print('\n');
 
- delay(30);
 }
 
