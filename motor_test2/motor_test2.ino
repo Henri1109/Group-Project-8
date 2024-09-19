@@ -1,4 +1,4 @@
-#define IN1 4  // PD4 
+#define IN1 4  // PD4 222
 #define IN2 2  // PD2 
 #define ENA 3  // PD3
 #define IN3 7  // PD7
